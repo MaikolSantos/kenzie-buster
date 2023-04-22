@@ -19,7 +19,3 @@ class UserView(APIView):
         serializer.save()
 
         return Response(data=serializer.data, status=status.HTTP_201_CREATED)
-
-
-class UserDetailView(APIView):
-    ...
