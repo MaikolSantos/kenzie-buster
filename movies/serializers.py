@@ -4,7 +4,6 @@ from .models import Movie, Rating, MovieOrder
 
 class MovieSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-
     title = serializers.CharField(max_length=127)
     duration = serializers.CharField(
         max_length=10, allow_null=True, default=None
@@ -21,7 +20,6 @@ class MovieSerializer(serializers.Serializer):
 
 class MovieOrderSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-
     title = serializers.CharField(
         max_length=127, source="movie.title", read_only=True
     )
